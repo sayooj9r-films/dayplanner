@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <title>Daymark — make room for what matters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d</span><span>daymark</span></a>
+      <div class="side-label">YOUR SPACE</div>
+      <nav class="nav" aria-label="Views">
+        <button class="nav-item active" data-view="day"><span class="nav-icon">◷</span>Today</button>
+        <button class="nav-item" data-view="week"><span class="nav-icon">▦</span>This week</button>
+        <button class="nav-item" data-view="month"><span class="nav-icon">▤</span>This month</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="focus-card"><span class="sparkle">✳</span><p>Small steps, taken daily, add up to a life you’re proud of.</p></div>
+        <div class="profile"><div class="avatar">Y</div><div><strong>Your planner</strong><small>Just for you</small></div><span class="dots">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs">MY PLANNER <span>/</span> <span id="crumb-view">TODAY</span></div>
+        <div class="top-actions"><button class="icon-button" id="today-button" title="Go to start date">⌂ <span>Start date</span></button><div class="top-avatar">Y</div></div>
+      </header>
+
+      <section class="page-heading">
+        <div><div class="eyebrow" id="heading-eyebrow">THURSDAY, OCTOBER 1, 2026</div><h1 id="heading-title">Make today count<span class="period">.</span></h1><p id="heading-subtitle">A little progress is still progress. What matters to you today?</p></div>
+        <div class="date-controls"><button id="prev-date" class="round-button" aria-label="Previous">‹</button><button id="date-label" class="date-label">Oct 1, 2026</button><button id="next-date" class="round-button" aria-label="Next">›</button></div>
+      </section>
+
+      <section id="day-view" class="view-panel">
+        <div class="day-grid">
+          <div class="left-column">
+            <article class="card goals-card">
+              <div class="card-heading"><div><span class="section-icon purple">✦</span><div><h2>Today’s goals</h2><p>Choose what you want to make time for</p></div></div><span class="count-pill" id="goal-count">0 / 0 done</span></div>
+              <div class="progress-track"><div id="progress-fill"></div></div>
+              <ul id="goal-list" class="goal-list"></ul>
+              <form id="goal-form" class="add-goal"><span class="plus">＋</span><input id="goal-input" maxlength="100" placeholder="Add a goal for today..." aria-label="New goal"><button type="submit">Add goal</button></form>
+            </article>
+            <article class="card reflection-card">
+              <div class="card-heading"><div><span class="section-icon yellow">✎</span><div><h2>Today in a few words</h2><p>What did you do? Capture the little moments.</p></div></div></div>
+              <textarea id="activity-input" rows="5" placeholder="A note to remember today... (e.g. went for a walk, called a friend, made dinner)"></textarea>
+              <div class="save-hint"><span class="save-dot"></span> Saved automatically on this device</div>
+            </article>
+          </div>
+          <aside class="right-column">
+            <article class="card snapshot-card"><div class="card-heading"><div><span class="section-icon green">↗</span><div><h2>Your snapshot</h2><p>A gentle look at this week</p></div></div></div><div class="snapshot-stats"><div><strong id="week-done">0</strong><span>goals completed</span></div><div><strong id="week-days">0</strong><span>days with a plan</span></div></div><div class="week-mini" id="week-mini"></div><button class="text-link" data-open-view="week">See your week <span>→</span></button></article>
+            <article class="quote-card"><span>“</span><p>You don’t have to see the whole staircase. Just take the first step.</p><small>— Martin Luther King Jr.</small></article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="week-view" class="view-panel hidden"><div class="card overview-card"><div class="overview-title"><div><h2>Your week, at a glance</h2><p>Make space for what matters, one day at a time.</p></div><span id="week-range" class="range-pill"></span></div><div class="week-grid" id="week-grid"></div></div></section>
+
+      <section id="month-view" class="view-panel hidden"><div class="card overview-card"><div class="overview-title"><div><h2>Your month, at a glance</h2><p>Every day is a fresh page.</p></div><span id="month-label" class="range-pill"></span></div><div class="calendar-wrap"><div class="calendar-grid calendar-head"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div><div class="calendar-grid" id="calendar-grid"></div></div><div class="calendar-legend"><span class="legend-dot"></span> A plan or note saved</div></div></section>
+
+      <footer>One day at a time <span>·</span> Your planner, your pace</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
